@@ -1,63 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Eventos</title>
+    <meta charset="UTF-8">
+    <title>Eventos</title>
 </head>
 <body>
-	<h1>Adicionar Eventos</h1>
-	<form action="">
-		<div>
+    <h1>Adicionar Eventos</h1>
 
-			<p th:text="${mensagem}"></p>
+   
+  
 
-		</div>
+    <form action="/eventos" method="post">
+        <div>
+            <label>Nome: </label> <input type="text" name="nome">
+        </div>
+        
+        <div>
+            <label>Local: </label> <input type="text" name="local">
+        </div>
 
-
-
-		<form action="/eventos/salvar" method="post">
-
-			<div>
-
-				<label>Nome: </label> <input type="text" name="nome">
-
-			</div>
-
-
-
-			<div>
-
-				<label>Local: </label> <input type="text" name="local">
-
-			</div>
-
-
-
-			<div>
-
-				<label>Data: </label> <input type="text" name="data">
-
-			</div>
-
-
-
-			<div>
-
-				<label>Horário: </label> <input type="text" name="horario">
-
-			</div>
-
-
-
-			<div>
-
-				<button type="submit">Salvar</button>
-
-				<button type="reset">Limpar</button>
-
-			</div>
-
-		</form>
+        <div>
+            <label>Data: </label> <input type="text" name="data">
+        </div>
+        
+        <div>
+            <label>Horário: </label> <input type="text" name="horario">
+        </div>
+        
+        <div>
+            <button type="submit">Salvar</button>
+            <button type="reset">Limpar</button>
+        </div>
+    </form>
 </body>
-
 </html>
