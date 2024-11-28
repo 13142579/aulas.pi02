@@ -2,45 +2,48 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <title>Eventos</title>
 </head>
 <body>
-	<div th:replace="~{menu :: menu}"></div>
-	<div class="container">
+<div th:replace="~{menu :: menu}"></div>
+<div class="container">
+	<h1>Adicionar Eventos</h1>
 	
-
-		<h1>Adicionar Eventos</h1>
+	<form action="/eventos" method="post" th:object="${evento}">
+		<div>
+	<input type="hidden" th:field="*{id}" readonly="readonly">
+		</div>
 		
+		
+		
+		<div>
+			<label>Nome: </label> <input type="text" th:field="*{nome}">
+			<p th:errors="*{nome}"> </p>
+		</div>
 
+		<div>
+			<label>Local: </label> <input type="text" th:field="*{local}">
+			<p th:errors="*{local}"> </p>
+		</div>
 
+		<div>
+			<label>Data: </label> <input type="date" th:field="*{data}">
+			<p th:errors="*{data}"> </p>
+		</div>
 
+		<div>
+			<label>Horário: </label> <input type="time" th:field="*{horario}">
+			<p th:errors="*{horario}"> </p>
+		</div>
 
-		<form action="/Eventos" method="post">
-			<div>
-				<label>Nome: </label> <input type="text" name="nome">
-			</div>
-
-			<div>
-				<label>Local: </label> <input type="text" name="local">
-			</div>
-
-			<div>
-				<label>Data: </label> <input type="text" name="data">
-			</div>
-
-			<div>
-				<label>Horário: </label> <input type="text" name="horario">
-			</div>
-
-			<div>
-				<button class="waves-effect waves-light btn" type="submit">Salvar</button>
-				<button class="waves-effect waves-light btn"type="reset">Limpar</button>
-			</div>
-		</form>
+		<div>
+			<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+			<button class="waves-effect waves-light btn" type="reset">Limpar</button>
+		</div>
+	</form>
 	</div>
 </body>
 </html>
